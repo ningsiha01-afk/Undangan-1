@@ -1,0 +1,1290 @@
+:root {
+  --burgundy-glass: rgba(92, 0, 21, 0.65);
+}
+
+/* BACKGROUND DASAR FIX */
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  background: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("Assets/gallery/background mempelai.jpeg") center / cover no-repeat;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* overlay gelap */
+  z-index: -1;
+}
+
+#info-mempelai,
+.acara-section,
+#gallery {
+  background: transparent;
+}
+
+/* COVER */
+#cover {
+  position: fixed;
+  inset: 0;
+  background: url('Assets/gallery/cover.jpeg') center/cover no-repeat;
+  z-index: 9999;
+  display: flex;
+  align-items: center;   
+  justify-content: center;
+  text-align: center;
+}
+
+#cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.45)
+  );
+  z-index: -1;
+}
+
+.cover-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.mempelai {
+  font-family: 'Allura', cursive;
+  font-size: 42px;
+  margin: 0 0 15px 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.tamu {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.mempelai,
+.tamu {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+
+
+
+/* NAV ICON */
+.nav-icon {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: none;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.nav-icon a {
+  color: #333;
+  font-size: 18px;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 80px 20px;
+}
+
+#btnBuka {
+  background-color: #5C0015;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border : 2px solid #000;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+#btnBuka:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+#btnBuka {
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 576px) {
+  .mempelai {
+    font-size: 2.1rem;
+  }
+}
+
+
+#countdown {
+  height: 100vh;
+  background: url("Assets/gallery/countdown.jpeg") center / cover no-repeat;
+  position: relative;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  overflow: hidden;
+}
+
+#countdown .content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;  
+  gap: 14px;
+}
+
+
+
+/* NAMA */
+.mempelai-nama {
+  font-family: 'Allura', cursive;
+  font-size: 30px;
+  letter-spacing: 1.2px;
+  text-shadow: 0 3px 10px rgba(0,0,0,.55);
+}
+
+/* COUNTDOWN */
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time {
+  background: linear-gradient(145deg, #8c2432, #651622);
+  padding: 12px 14px;
+  border-radius: 14px;
+  min-width: 58px;
+
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.time:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 24px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.time span {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.time small {
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+/* DATE */
+.event-date {
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+/* SAVE THE DATE */
+.save-date {
+  padding: 7px 22px;
+  border-radius: 40px;
+  background: rgba(122, 31, 43, 0.95);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  #countdown .content {
+    margin-bottom: 70px;
+  }
+
+  .mempelai-nama {
+    font-size: 27px;
+  }
+
+  .time {
+    min-width: 54px;
+    padding: 10px 8px;
+  }
+
+  .time span {
+    font-size: 19px;
+  }
+
+  .time small {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================
+   SECTION AYAT
+========================= */
+#ayat {
+  min-height: 25vh;
+  background: url("Assets/gallery/ayat quran.jpeg") center / cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 10px;
+}
+
+/* WADAH */
+.ayat-container {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* KOTAK UTAMA */
+.ayat-box {
+  position: relative;
+  background: linear-gradient(145deg, #5C0015, #651622);
+  border-radius: 22px;
+  padding: 30px 26px;
+  text-align: center;
+
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* KONTEN */
+.ayat-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* TANDA KUTIP */
+.ayat-quote {
+  font-size: 42px;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+/* TEKS AYAT */
+.ayat-text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+/* SUMBER */
+.ayat-sumber {
+  margin-top: 16px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: #f1dede;
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .ayat-box {
+    padding: 32px 22px;
+  }
+
+  .ayat-ornamen {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .ayat-quote {
+    font-size: 38px;
+  }
+
+  .ayat-text {
+    font-size: 13.5px;
+  }
+}
+
+
+/* =========================
+   ANIMASI AYAT (FIX)
+========================= */
+
+/* keadaan awal */
+.ayat-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* saat muncul */
+.ayat-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* teks awal */
+.ayat-quote,
+.ayat-text,
+.ayat-sumber {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.8s ease-out;
+}
+
+/* teks muncul berurutan */
+.ayat-container.show .ayat-quote {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ayat-container.show .ayat-text {
+  transition-delay: 0.6s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ayat-container.show .ayat-sumber {
+  transition-delay: 0.9s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BACKGROUND PANJANG*/
+#bg-undangan-panjang {
+  background: transparent;
+  position: relative;
+}
+
+#bg-undangan-panjang::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+/* INFO MEMPELAI*/
+#info-mempelai {
+  background: transparent;
+  position: relative;
+  padding: 70px 0 80px;
+}
+
+.info-overlay {
+  background: none;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+/* CONTAINER LONJONG */
+.lonjong-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+
+  border-radius: 999px;
+  overflow: hidden; /* KUNCI SUPAYA TETAP LONJONG */
+
+  padding: 60px 24px 130px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+
+  background: linear-gradient(145deg, #5C0015, #651622);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+
+
+/* BLOK MEMPELAI */
+
+.mempelai:last-child {
+  margin-bottom: 0;
+}
+
+.ampersand {
+  font-family: 'Sacramento', cursive;
+  font-size: 36px;
+  color: #fff;
+  opacity: 0.85;
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35)
+}
+
+.lineage {
+  margin-top: -4px;
+  font-family: 'Poppins', Arial, sans-serif; /* font biasa */
+  font-size: 11px;
+  line-height: 1.4;
+  color: #f3dede;
+  font-style: normal; /* hilangkan italic */
+  letter-spacing: 0.3px;
+}
+
+.section-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* WRAPPER BINGKAI */
+.frame-wrapper {
+  position: relative;
+  width: 220px;
+  height: 300px;
+  margin: 0 auto 20px;
+
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.frame-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.9);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.frame-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.6);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* BINGKAI KAMU */
+.bingkai {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* FOTO DALAM BINGKAI */
+.bingkai {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* WAJIB */
+  display: block;
+}
+
+/* TEKS */
+.section-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+/* the bride&groom */
+.role {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f2dede;
+  margin-bottom: 18px;
+}
+
+/* nama mempelai */
+.name {
+  margin-top: 8px;
+  font-family: 'Sacramento', cursive;
+  color: #fff;
+
+  font-size: clamp(30px, 6vw, 38px);
+}
+/* animasi zoom */
+.name {
+  transition: transform 1.4s ease, opacity 1.4s ease;
+}
+
+/* =====================
+   INSTAGRAM LINK
+===================== */
+.social {
+  margin-top: 6px;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.7);
+  transition: all 0.4s ease;
+}
+
+.social img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.social a:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.1);
+}
+
+@media (max-width: 576px) {
+  .lonjong-container {
+    max-width: 300px;
+    padding: 50px 20px 140px;
+    gap: 50px;
+  }
+
+  .frame-wrapper {
+    width: 200px;
+    height: 270px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+}
+
+/* =========================
+   ACARA SECTION
+========================= */
+.acara-section {
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+/* =========================
+   ROW
+========================= */
+.acara-row {
+  display: flex;
+  align-items: stretch; /* kunci sejajar timeline & card */
+  gap: 16px;
+}
+
+.acara-row.kiri {
+  justify-content: flex-start;
+}
+
+.acara-row.kanan {
+  justify-content: flex-end;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* GARIS */
+.timeline .line {
+  flex: 1;
+  width: 4px;              /* lebih bold */
+  background: #6b1f2b;
+  border-radius: 4px;
+}
+
+/* BULATAN */
+.timeline .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #6b1f2b;     /* tegas & jelas */
+}
+
+/* =========================
+   CARD UMUM
+========================= */
+.acara-card {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(145deg, #5C0015, #651622);
+  backdrop-filter: blur(2px);
+  color: #fff;
+  width: 78%;
+  min-height: 300px;
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(107, 31, 43, 0.35);
+}
+
+/* LONJONG KIRI */
+.acara-card.kiri {
+  border-radius: 0 180px 180px 0;
+  margin-left: -8px; /* mendekat ke timeline */
+  padding-left: 35px;
+  text-align: left;
+}
+
+/* LONJONG KANAN */
+.acara-card.kanan {
+  border-radius: 180px 0 0 180px;
+  margin-right: -8px;
+  padding-right: 35px;
+  text-align: right;
+}
+
+/* =========================
+   TEXT
+========================= */
+.acara-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.acara-card p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* =========================
+   ALAMAT
+========================= */
+.alamat {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+/* =========================
+   BUTTON MAP
+========================= */
+.btn-map {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+  align-self: flex-start;
+  background: #8b4a4a;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.acara-card.kanan .btn-map {
+  align-self: flex-end;
+}
+
+
+/* =========================
+   LOVE STORY SECTION
+========================= */
+#love-story {
+  min-height: 100vh;
+  background: url("Assets/gallery/ayat quran.jpeg") center / cover no-repeat;
+  position: relative;
+}
+
+/* OVERLAY */
+.love-story-overlay {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+/* ⬇️ TAMBAHKAN */
+  background: linear-gradient(145deg, #5C0015, #651622);
+  );
+}
+
+/* LONJONG BESAR */
+.love-story-card {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  padding: 90px 32px;
+
+  background: linear-gradient(145deg, #5C0015, #651622);
+
+  border-radius: 300px 300px 0 0;
+  text-align: center;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* 🔥 EFEK TIMBUL */
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+  transform: translateY(-20px);
+}
+
+/* JUDUL */
+.love-story-card .title {
+  letter-spacing: 4px;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+/* SUB JUDUL */
+.love-story-card h3 {
+  margin-top: 30px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* PARAGRAF */
+.love-story-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* =========================
+   STORY ITEM
+========================= */
+.story-item {
+  position: relative;
+  text-align: center;
+}
+
+/* =========================
+   GARIS LURUS ESTETIK
+========================= */
+.story-item.garis {
+  padding-top: 70px;
+}
+
+.story-item.garis::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 2px;
+  height: 90px; /* ⬅️ PANJANG */
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.7),
+    rgba(255,255,255,0)
+  );
+}
+
+/* FADE HALUS SEMUA ISI */
+[data-aos="fade-in"] {
+  opacity: 0;
+}
+
+[data-aos="fade-in"].aos-animate {
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+/* ======================
+   OUR GALLERY (NO VIDEO)
+====================== */
+#gallery {
+  padding: 90px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-frame {
+  max-width: 420px;
+  margin: auto;
+  padding: 30px 18px 40px;
+  background: linear-gradient(145deg, #5C0015, #651622);
+  border-radius: 40px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.gallery-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 34px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* GRID */
+.gallery-grid-custom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* ITEM */
+.grid-item {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* FOTO */
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .4s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* VARIASI UKURAN */
+.grid-item.big {
+  grid-column: span 2;
+  height: 180px;
+}
+
+.grid-item.wide {
+  grid-column: span 2;
+  height: 160px;
+}
+
+.grid-item:not(.big):not(.wide) {
+  height: 150px;
+}
+
+
+#lightbox-gallery {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 16px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 38px;
+  color: #fff;
+  cursor: pointer;
+}
+/* =========================
+   ANIMASI MUNCUL BERURUTAN
+========================= */
+.grid-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.grid-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ======================
+   SECTION GIFT
+====================== */
+#gift {
+  position: relative;
+  height: 50vh;
+  background: url("Assets/gallery/ayat quran.jpeg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* overlay biar teks kebaca */
+.gift-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 1;
+}
+
+/* container utama */
+.gift-container {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+  width: 100%;
+  background: #6b1f2b; /* burgundy */
+  box-shadow: 0 25px 60px rgba(0,0,0.35);
+  border-radius: 40px;
+  padding: 40px 25px 50px;
+  text-align: center;
+  color: #fff;
+}
+
+/* judul */
+.gift-title {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* deskripsi */
+.gift-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* tombol */
+.gift-btn {
+  background: #fff;
+  color: #7a2436;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gift-btn:hover {
+  background: #f3d5dd;
+}
+
+/* isi gift (awal hidden) */
+.gift-content {
+  margin-top: 30px;
+  display: none;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* kartu atm */
+.gift-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.gift-card h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.gift-card p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.gift-card span {
+  display: block;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 6px 0;
+  font-weight: bold;
+}
+
+.gift-card small {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* saat gift dibuka */
+#gift.open {
+  height: 100vh;
+  transition: height 0.6s ease;
+}
+
+/* animasi */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ======================
+   RSVP SECTION (FIX)
+====================== */
+#rsvp {
+  position: relative;
+  padding: 90px 18px;
+  background: transparent;
+}
+
+
+
+.rsvp-container {
+  position: relative;
+  z-index: 2;
+  max-width: 380px;              /* lebih ramping di HP */
+  margin: auto;
+  padding: 42px 26px 46px;
+  background: linear-gradient(145deg, #5C0015, #651622);
+  backdrop-filter: blur(8px);
+  border-radius: 38px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* TITLE */
+.rsvp-title {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+}
+
+.rsvp-subtitle {
+  font-size: 14px;
+  margin-bottom: 26px;
+  opacity: 0.9;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 28px;          /* DISAMAKAN */
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.92);
+  color: #4a1c28;
+  box-sizing: border-box;
+}
+
+/* FIX SELECT iOS */
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234a1c28' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 14px;
+  padding-right: 42px;
+}
+
+/* TEXTAREA */
+.form-group textarea {
+  border-radius: 22px;
+  resize: none;
+  min-height: 100px;
+}
+
+/* BUTTON */
+.btn-rsvp {
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #7a1e34, #a8324a);
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-rsvp:hover {
+  background: linear-gradient(135deg, #a8324a, #7a1e34);
+  transform: translateY(-2px);
+}
+
+/* SUCCESS TEXT */
+.rsvp-success {
+  display: none;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #ffe6ec;
+}
+
+/* ======================
+   RSVP COMMENTS
+====================== */
+.rsvp-comments {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.comment-item {
+  background: rgba(255,255,255,0.95);
+  color: #4a1c28;
+  padding: 14px 16px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+  position: relative;
+  font-size: 13px;
+}
+
+.comment-item strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.comment-delete {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #a8324a;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+
+/* PENUTUP UNDANGAN */
+.penutup-section {
+  position: relative;
+  min-height: 110vh;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+
+.penutup-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  color: #fff;
+}
+
+.penutup-text {
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+.penutup-nama {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.penutup-nama .dan {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* ANIMASI ZOOM */
+.zoom-item {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1s ease;
+}
+
+.zoom-item.show {
+  opacity: 1;
+  transform: scale(1);
+}
